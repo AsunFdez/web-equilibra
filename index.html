@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#f9fafb">
+  <meta name="description" content="Equilibra te ayuda a cuidar tus finanzas con claridad, hábitos saludables y pequeños pasos que sí puedes mantener.">
+  <title>Equilibra — tus finanzas, a tu ritmo</title>
+  <link rel="icon" type="image/webp" href="assets/equilibra-icon.webp">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <header class="site-header">
+    <nav class="navigation container" aria-label="Navegación principal">
+      <a class="brand" href="#inicio" aria-label="Equilibra, inicio">
+        <span class="brand-mark" aria-hidden="true">
+          <img src="assets/equilibra-icon.webp" alt="">
+        </span>
+        <span>equilibra<span class="brand-dot">.</span></span>
+      </a>
+
+      <button class="menu-toggle" type="button" aria-label="Abrir menú" aria-expanded="false" aria-controls="nav-links">
+        <span></span><span></span>
+      </button>
+
+      <div class="nav-links" id="nav-links">
+        <a href="#filosofia">La filosofía</a>
+        <a href="#funciones">Qué puedes hacer</a>
+        <a href="#bienestar">Bienestar financiero</a>
+      </div>
+      <a class="button button-small button-dark nav-cta" href="#funciones">Descubre Equilibra <span aria-hidden="true">↗</span></a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero section" id="inicio">
+      <div class="hero-wash" aria-hidden="true"></div>
+      <div class="container hero-layout">
+        <div class="hero-copy">
+          <div class="eyebrow"><span class="eyebrow-dot"></span> Una forma más amable de ver tu dinero</div>
+          <h1>Tus finanzas,<br>a tu <span class="serif-accent">ritmo.</span></h1>
+          <p class="hero-intro">Entiende tus gastos, celebra tus avances y construye una relación más tranquila con tu dinero. Sin juicios. Un paso cada vez.</p>
+          <div class="hero-actions">
+            <a class="button button-green" href="#funciones">Encuentra tu equilibrio <span aria-hidden="true">↗</span></a>
+            <a class="text-link" href="#filosofia"><span class="play-icon" aria-hidden="true">↓</span> Conoce nuestra filosofía</a>
+          </div>
+          <div class="hero-note">
+            <span class="note-avatars" aria-hidden="true"><i>✳</i><i>⌁</i><i>◌</i></span>
+            <span>Pequeños pasos. Más tranquilidad.</span>
+          </div>
+        </div>
+
+        <div class="hero-art" aria-label="Vista de ejemplo de la aplicación Equilibra">
+          <div class="float-note note-top"><span class="float-icon">✦</span><span><strong>Vas muy bien</strong><small>7 días cuidando tu presupuesto</small></span></div>
+          <div class="phone">
+            <div class="phone-notch" aria-hidden="true"></div>
+            <div class="phone-screen">
+              <div class="app-topbar">
+                <span class="app-greeting">Hola, Asun <span aria-hidden="true">✦</span></span>
+                <span class="app-avatar"><img src="assets/equilibra-icon.webp" alt=""></span>
+              </div>
+              <div class="app-date">MIÉRCOLES, 12 JUNIO</div>
+              <div class="balance-card">
+                <div class="balance-label">Tu balance de junio <span>⌄</span></div>
+                <div class="balance-amount">1.284,50 <small>€</small></div>
+                <div class="balance-trend"><span>↗ 12,8%</span> respecto al mes pasado</div>
+                <div class="chart" aria-label="Gráfico ilustrativo de gastos">
+                  <div class="chart-grid"></div>
+                  <svg viewBox="0 0 300 82" preserveAspectRatio="none" role="img" aria-label="Tendencia mensual ascendente">
+                    <defs><linearGradient id="chartFill" x1="0" x2="0" y1="0" y2="1"><stop offset="0" stop-color="#b8e4ad" stop-opacity=".5"/><stop offset="1" stop-color="#b8e4ad" stop-opacity="0"/></linearGradient></defs>
+                    <path d="M0 64C20 58 22 46 43 50S68 65 88 47 113 39 130 44 156 32 174 38 201 25 217 31 246 10 263 21 281 17 300 8V82H0Z" fill="url(#chartFill)"/>
+                    <path d="M0 64C20 58 22 46 43 50S68 65 88 47 113 39 130 44 156 32 174 38 201 25 217 31 246 10 263 21 281 17 300 8" fill="none" stroke="#4d9b61" stroke-width="2.5" stroke-linecap="round"/>
+                    <circle cx="263" cy="21" r="4" fill="#fff" stroke="#4d9b61" stroke-width="2.5"/>
+                  </svg>
+                  <div class="chart-labels"><span>1 JUN</span><span>10 JUN</span><span>20 JUN</span><span>30 JUN</span></div>
+                </div>
+              </div>
+              <div class="app-section-title"><strong>Este mes</strong><a href="#funciones">Ver análisis <span>↗</span></a></div>
+              <div class="mini-stats">
+                <div class="mini-stat"><span class="stat-icon expense-icon">↘</span><span><small>Gastos</small><strong>846,20 €</strong></span></div>
+                <div class="mini-stat"><span class="stat-icon saving-icon">↗</span><span><small>Ahorro</small><strong>438,30 €</strong></span></div>
+              </div>
+              <div class="app-section-title transactions-title"><strong>Últimos movimientos</strong><span class="all-link">Ver todos</span></div>
+              <div class="transaction"><span class="transaction-icon food-icon">☕</span><span class="transaction-name"><strong>Café y brunch</strong><small>Alimentación · Hoy</small></span><strong class="transaction-amount">− 12,50 €</strong></div>
+              <div class="transaction"><span class="transaction-icon home-icon">⌂</span><span class="transaction-name"><strong>Compra semanal</strong><small>Hogar · Ayer</small></span><strong class="transaction-amount">− 38,20 €</strong></div>
+              <div class="app-nav"><span class="active">◉<small>Inicio</small></span><span>▤<small>Gastos</small></span><span>◷<small>Análisis</small></span><span>◎<small>Perfil</small></span></div>
+            </div>
+          </div>
+          <div class="float-note note-bottom"><span class="flower-icon">✿</span><span><strong>¡Un hábito genial!</strong><small>Registrar también es avanzar</small></span></div>
+          <span class="art-sparkle sparkle-one" aria-hidden="true">✳</span>
+          <span class="art-sparkle sparkle-two" aria-hidden="true">✦</span>
+        </div>
+      </div>
+      <div class="hero-bottom container">
+        <span>UN BIENESTAR QUE TAMBIÉN SE NOTA</span>
+        <div class="hero-values"><span>Claridad <i>✳</i></span><span>Hábitos <i>✳</i></span><span>Tranquilidad <i>✳</i></span></div>
+      </div>
+    </section>
+
+    <section class="philosophy section" id="filosofia">
+      <div class="container philosophy-layout">
+        <div class="section-kicker">01 — OTRA MIRADA</div>
+        <div class="philosophy-content">
+          <h2>El dinero no debería pesarte.<br><span class="serif-accent">Debería darte opciones.</span></h2>
+          <p>Equilibra transforma tus movimientos cotidianos en una visión clara de cómo estás. Porque tener tus finanzas en orden no va de hacerlo todo perfecto: va de tomar decisiones con más calma y confianza.</p>
+          <a class="arrow-link" href="#bienestar">Una relación más sana con tu dinero <span>↗</span></a>
+        </div>
+        <div class="philosophy-stamp" aria-hidden="true"><span>CON CALMA</span><strong>∞</strong><span>A TU MANERA</span></div>
+      </div>
+    </section>
+
+    <section class="features section" id="funciones">
+      <div class="container">
+        <div class="section-heading">
+          <div><div class="section-kicker">02 — TODO EN EQUILIBRIO</div><h2>Tu día a día,<br><span class="serif-accent">con más perspectiva.</span></h2></div>
+          <p>Lo importante, explicado con claridad. Herramientas sencillas para que tu dinero trabaje a favor de lo que te importa.</p>
+        </div>
+        <div class="feature-grid">
+          <article class="feature-card feature-card-large">
+            <div class="feature-copy"><span class="feature-number">01 / CLARIDAD</span><h3>Entiende a dónde va.</h3><p>Registra ingresos y gastos y descubre tus hábitos con análisis mensuales fáciles de leer.</p><a href="#demo" class="feature-arrow" aria-label="Ver análisis financiero">↗</a></div>
+            <div class="donut-wrap" aria-label="Distribución de gastos ilustrativa">
+              <div class="donut"><div><strong>846 €</strong><small>este mes</small></div></div>
+              <div class="donut-legend"><span><i class="legend-dot green"></i> Hogar <b>42%</b></span><span><i class="legend-dot yellow"></i> Alimentación <b>31%</b></span><span><i class="legend-dot blue"></i> Otros <b>27%</b></span></div>
+            </div>
+            <span class="card-orbit orbit-a" aria-hidden="true"></span>
+          </article>
+          <article class="feature-card feature-card-goal">
+            <div class="feature-copy"><span class="feature-number">02 / OBJETIVOS</span><h3>Ahorrar también es avanzar.</h3><p>Pon nombre a tus metas y celebra cada pequeño paso hacia ellas.</p></div>
+            <div class="goal-card"><span class="goal-sun">☼</span><span class="goal-label">MI PRÓXIMO VIAJE</span><strong>680 <small>€ / 1.000 €</small></strong><div class="progress-track"><span></span></div><small class="goal-caption">Ya estás más cerca · 68%</small></div>
+          </article>
+          <article class="feature-card feature-card-habit">
+            <div class="habit-art" aria-hidden="true"><span>✦</span><span>·</span><span>✿</span><span>·</span><span>✦</span></div>
+            <div class="feature-copy"><span class="feature-number">03 / HÁBITOS</span><h3>Mejor poco a poco.</h3><p>Reconoce tus avances y crea hábitos financieros que sí encajan contigo.</p></div>
+          </article>
+          <article class="feature-card feature-card-calm">
+            <span class="calm-icon" aria-hidden="true">☁</span>
+            <div class="feature-copy"><span class="feature-number">04 / BIENESTAR</span><h3>Sin culpa. Con calma.</h3><p>Recibe sugerencias amables cuando las necesitas. Aquí no hay regaños, solo nuevas perspectivas.</p></div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="demo section" id="demo">
+      <div class="container demo-layout">
+        <div class="demo-copy"><div class="section-kicker">03 — A TU MANERA</div><h2>Tu progreso,<br><span class="serif-accent">sin comparaciones.</span></h2><p>Un mes no define tu camino. Mira tus números, aprende de ellos y sigue a tu ritmo.</p><div class="demo-tabs" role="group" aria-label="Selecciona el periodo del balance"><button class="period-button is-active" type="button" data-period="current" aria-pressed="true">Este mes</button><button class="period-button" type="button" data-period="previous" aria-pressed="false">Mes anterior</button></div><p class="demo-caption" id="period-caption" aria-live="polite">Junio · una vista de ejemplo</p></div>
+        <div class="demo-panel" aria-live="polite">
+          <div class="demo-panel-top"><span>RESUMEN FINANCIERO</span><span class="demo-live-dot">●</span></div>
+          <div class="demo-balance-label">Balance del periodo</div>
+          <div class="demo-balance" id="demo-balance">+1.284,50 <small>€</small></div>
+          <div class="demo-change"><span id="demo-change">↗ 12,8%</span> <span>vs. mes anterior</span></div>
+          <div class="demo-bars" aria-label="Gráfico ilustrativo de gastos semanales">
+            <div class="bar-item"><div class="bar bar-one"></div><small>SEM 1</small></div>
+            <div class="bar-item"><div class="bar bar-two"></div><small>SEM 2</small></div>
+            <div class="bar-item"><div class="bar bar-three"></div><small>SEM 3</small></div>
+            <div class="bar-item"><div class="bar bar-four"></div><small>SEM 4</small></div>
+            <div class="bar-item"><div class="bar bar-five"></div><small>SEM 5</small></div>
+          </div>
+          <div class="demo-breakdown"><div><span><i class="legend-dot green"></i> Ingresos</span><strong id="demo-income">2.250,00 €</strong></div><div><span><i class="legend-dot coral"></i> Gastos</span><strong id="demo-expenses">965,50 €</strong></div></div>
+          <div class="demo-footnote">* Datos ficticios para mostrar la experiencia.</div>
+        </div>
+        <span class="demo-deco" aria-hidden="true">✳</span>
+      </div>
+    </section>
+
+    <section class="wellbeing section" id="bienestar">
+      <div class="container wellbeing-layout">
+        <div class="wellbeing-illustration" aria-hidden="true">
+          <span class="wellbeing-circle circle-one"></span><span class="wellbeing-circle circle-two"></span>
+          <div class="wellbeing-flower"><img src="assets/equilibra-icon.webp" alt=""></div>
+          <div class="wellbeing-tag">CRECER A TU RITMO</div>
+          <span class="wellbeing-sparkle">✦</span>
+        </div>
+        <div class="wellbeing-copy"><div class="section-kicker">04 — MÁS QUE NÚMEROS</div><h2>Tu bienestar<br>también <span class="serif-accent">cuenta.</span></h2><p>La salud financiera no consiste en tenerlo todo bajo control. Consiste en sentir que puedes elegir. Equilibra te acompaña a mirar tus hábitos con curiosidad, no con culpa.</p><a class="button button-dark" href="#inicio">Empieza por un pequeño paso <span aria-hidden="true">↗</span></a></div>
+      </div>
+    </section>
+
+    <section class="closing section">
+      <div class="container closing-inner"><span class="closing-flower" aria-hidden="true">✳</span><div class="section-kicker">UN PASO CADA VEZ</div><h2>El equilibrio no se encuentra.<br><span class="serif-accent">Se construye.</span></h2><a class="button button-green" href="#inicio">Descubre Equilibra <span aria-hidden="true">↑</span></a></div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-main">
+      <a class="brand footer-brand" href="#inicio"><span class="brand-mark" aria-hidden="true"><img src="assets/equilibra-icon.webp" alt=""></span><span>equilibra<span class="brand-dot">.</span></span></a>
+      <p>Más claridad. Menos ruido.<br>Más tú.</p>
+      <a class="footer-top" href="#inicio">Volver arriba ↑</a>
+    </div>
+    <div class="container footer-bottom"><span>© <span id="current-year"></span> Equilibra. Hecho para avanzar a tu manera.</span><span>Una demo conceptual · Los datos mostrados son ficticios</span></div>
+  </footer>
+</body>
+</html>
