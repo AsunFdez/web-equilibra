@@ -1,9 +1,6 @@
 
-
 name: Equilibra CI/CD
 
-# Ejecutar al subir cambios a main, crear Pull Requests
-# o iniciar manualmente el workflow
 on:
   push:
     branches:
@@ -15,7 +12,6 @@ on:
 
   workflow_dispatch:
 
-# Evitar ejecuciones simultáneas innecesarias
 concurrency:
   group: pages-${{ github.ref }}
   cancel-in-progress: true
@@ -27,20 +23,17 @@ jobs:
   # ==========================================
   test:
     name: Run automated tests
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
 
     steps:
-      # Descargar el código del repositorio
       - name: Checkout repository
-        uses: actions/checkout@v4
+        uses: actions/checkout@v7
 
-      # Configurar Node.js
       - name: Setup Node.js
-        uses: actions/setup-node@v4
+        uses: actions/setup-node@v7
         with:
-          node-version: 20
+          node-version: 24
 
-      # Ejecutar los tests
       - name: Run tests
         run: node --test test/web.test.js
 
@@ -50,16 +43,12 @@ jobs:
   # ==========================================
   deploy:
     name: Deploy to GitHub Pages
-
-    # Este trabajo depende de que los tests terminen correctamente
     needs: test
 
-    # No publicar desde Pull Requests ni desde otras ramas
     if: github.event_name != 'pull_request' && github.ref == 'refs/heads/main'
 
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
 
-    # Permisos necesarios para GitHub Pages
     permissions:
       contents: read
       pages: write
@@ -70,21 +59,17 @@ jobs:
       url: ${{ steps.deployment.outputs.page_url }}
 
     steps:
-      # Descargar el código del repositorio
       - name: Checkout repository
-        uses: actions/checkout@v4
+        uses: actions/checkout@v7
 
-      # Configurar GitHub Pages
       - name: Setup GitHub Pages
-        uses: actions/configure-pages@v5
+        uses: actions/configure-pages@v6
 
-      # Preparar los archivos de la web
       - name: Upload website
-        uses: actions/upload-pages-artifact@v3
+        uses: actions/upload-pages-artifact@v5
         with:
           path: .
 
-      # Publicar la web
       - name: Deploy to GitHub Pages
         id: deployment
-        uses: actions/deploy-pages@v4
+        uses: actions/deploy-pages@v5.0.1
