@@ -2,8 +2,8 @@
   color-scheme: light;
   --ink: #1e2939;
   --muted: #6a7282;
-  --green: #2ecc71;
-  --green-dark: #27ae60;
+  --green: #16804a;
+  --green-dark: #146c40;
   --green-light: #d5f4e6;
   --blue: #3498db;
   --blue-light: #d6eaf8;
@@ -458,4 +458,105 @@ h1 { margin: 23px 0 17px; font-size: clamp(60px, 7.1vw, 92px); font-weight: 600;
 
 @media (max-width: 680px) {
   .brand-mark { width: 32px; height: 32px; }
+}
+
+.skip-link {
+  position: fixed;
+  z-index: 30;
+  top: 12px;
+  left: 12px;
+  padding: 12px 16px;
+  border-radius: 999px;
+  color: #fff;
+  background: #146c40;
+  transform: translateY(-160%);
+}
+
+.skip-link:focus {
+  transform: translateY(0);
+}
+
+:focus-visible {
+  outline: 3px solid #146c40;
+  outline-offset: 3px;
+}
+
+.nav-links a {
+  padding-block: 12px;
+}
+
+.nav-links a:hover,
+.footer-top:hover {
+  color: #146c40;
+}
+
+.hero-intro,
+.philosophy-content p,
+.section-heading > p,
+.demo-copy > p,
+.wellbeing-copy > p {
+  font-size: 15px;
+}
+
+.feature-copy p {
+  font-size: 13px;
+}
+
+.section-kicker {
+  font-size: 10px;
+}
+
+.button-dark,
+.button-green {
+  background: #16804a;
+}
+
+.button-dark:hover,
+.button-green:hover {
+  background: #146c40;
+}
+
+.period-button.is-active {
+  background: #16804a;
+}
+
+.feature-arrow:hover {
+  border-color: #146c40;
+  background: #146c40;
+}
+
+@media (hover: hover) {
+  .feature-card {
+    transition: transform .25s ease, box-shadow .25s ease;
+  }
+
+  .feature-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 28px rgba(30, 41, 57, .09);
+  }
+}
+
+@media (max-width: 680px) {
+  .hero-intro,
+  .philosophy-content p,
+  .section-heading > p,
+  .demo-copy > p,
+  .wellbeing-copy > p {
+    font-size: 14px;
+  }
+
+  .feature-copy p {
+    font-size: 12px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .js-ready .feature-card,
+  .js-ready .philosophy-content,
+  .js-ready .demo-panel,
+  .js-ready .wellbeing-copy {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
 }
