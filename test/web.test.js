@@ -226,6 +226,35 @@ test('la página contiene sus secciones principales y carga script.js', () => {
   }
 });
 
+test('las políticas están publicadas, enlazadas y sin URLs pendientes', () => {
+  const policyPages = [
+    ['politica-privacidad.html', /Política de privacidad/],
+    ['cookies.html', /Cookies y tecnologías/],
+    ['terminos-condiciones.html', /Términos y condiciones/],
+  ];
+
+  for (const [fileName, heading] of policyPages) {
+    const policyHtml = fs.readFileSync(path.join(ROOT, fileName), 'utf8');
+
+    assert.match(html, new RegExp(`href="${fileName}"`));
+    assert.match(policyHtml, heading);
+    assert.doesNotMatch(policyHtml, /\[URL(?: de privacidad)?\]/i);
+  }
+
+  const terms = fs.readFileSync(
+    path.join(ROOT, 'terminos-condiciones.html'),
+    'utf8'
+  );
+  assert.match(
+    terms,
+    /https:\/\/asunfdez\.github\.io\/web-equilibra\/politica-privacidad\.html/
+  );
+  assert.match(
+    terms,
+    /https:\/\/asunfdez\.github\.io\/web-equilibra\/terminos-condiciones\.html/
+  );
+});
+
 // TEST 2: Apertura y cierre del menú móvil
 
 test('el menú móvil se abre y se cierra actualizando sus atributos accesibles', () => {
