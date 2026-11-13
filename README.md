@@ -10,6 +10,7 @@ Equilibra es una página web sobre la App Equilibra de bienestar financiero. Pre
 - Un resumen financiero interactivo que permite alternar entre el mes actual y el anterior.
 - Datos y gráficos ficticios; no se conectan cuentas ni se guardan movimientos.
 - Páginas públicas de privacidad, cookies y tecnologías similares, y términos y condiciones.
+- Página para solicitar por correo la eliminación de una cuenta de AppEquilibra y sus datos asociados.
 
 ## Cómo abrir el proyecto
 
@@ -28,5 +29,6 @@ Después, visita [http://localhost:8000](http://localhost:8000).
 - `script.js`: menú móvil, selector de periodos y animaciones de entrada.
 - `assets/equilibra-icon.webp`: icono de Equilibra.
 - `politica-privacidad.html`, `cookies.html` y `terminos-condiciones.html`: políticas y condiciones publicadas.
+- `eliminar-cuenta.html` y `eliminar-cuenta.js`: formulario que prepara la solicitud de eliminación en el cliente de correo del usuario; la web no procesa ni guarda esas solicitudes.
 
 Las fuentes DM Sans y Manrope se cargan desde Google Fonts, por lo que su descarga requiere conexión a internet. Sin conexión, se usarán fuentes alternativas del sistema.

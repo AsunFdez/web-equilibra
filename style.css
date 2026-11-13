@@ -565,6 +565,113 @@ h1 { margin: 23px 0 17px; font-size: clamp(60px, 7.1vw, 92px); font-weight: 600;
   background: #f3f4f6;
 }
 
+.deletion-notice {
+  margin: 24px 0;
+  padding: 18px 20px;
+  border-left: 4px solid #16804a;
+  border-radius: 8px;
+  background: #f0f7f2;
+}
+
+.deletion-notice p:first-child {
+  margin-top: 0;
+}
+
+.deletion-notice p:last-child {
+  margin-bottom: 0;
+}
+
+.deletion-form {
+  display: grid;
+  gap: 20px;
+  margin-top: 28px;
+}
+
+.deletion-form label {
+  display: block;
+  margin-bottom: 7px;
+  color: #293447;
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.deletion-form input[type="email"],
+.deletion-form textarea {
+  width: 100%;
+  padding: 12px 14px;
+  border: 1px solid #cbd2dc;
+  border-radius: 8px;
+  color: #1e2939;
+  background: #fff;
+  font: inherit;
+}
+
+.deletion-form textarea {
+  min-height: 120px;
+  resize: vertical;
+}
+
+.deletion-form .field-hint {
+  display: block;
+  margin-top: 6px;
+  color: #626d7e;
+  font-size: 12px;
+  line-height: 1.6;
+}
+
+.deletion-form .confirmation-field {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  color: #465164;
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.confirmation-field input {
+  flex: 0 0 auto;
+  width: 18px;
+  height: 18px;
+  margin: 2px 0 0;
+  accent-color: #16804a;
+}
+
+.deletion-form .confirmation-field label {
+  margin: 0;
+  color: inherit;
+  font-size: inherit;
+  font-weight: 400;
+}
+
+.deletion-submit {
+  justify-self: start;
+  min-height: 48px;
+  padding: 0 22px;
+  border: 0;
+  border-radius: 999px;
+  color: #fff;
+  background: #16804a;
+  cursor: pointer;
+  font: inherit;
+  font-weight: 700;
+}
+
+.deletion-submit:hover {
+  background: #146c40;
+}
+
+.deletion-submit:focus-visible {
+  outline: 3px solid #146c40;
+  outline-offset: 3px;
+}
+
+.deletion-status {
+  min-height: 1.5em;
+  margin: 0;
+  color: #465164;
+  font-size: 14px;
+}
+
 @media (max-width: 680px) {
   .policy-page {
     padding-block: 32px 48px;

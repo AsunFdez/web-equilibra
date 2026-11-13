@@ -18,6 +18,14 @@ const vm = require('node:vm');
 const ROOT = path.resolve(__dirname, '..');
 const html = fs.readFileSync(path.join(ROOT, 'index.html'), 'utf8');
 const script = fs.readFileSync(path.join(ROOT, 'script.js'), 'utf8');
+const deletionHtml = fs.readFileSync(
+  path.join(ROOT, 'eliminar-cuenta.html'),
+  'utf8'
+);
+const deletionScript = fs.readFileSync(
+  path.join(ROOT, 'eliminar-cuenta.js'),
+  'utf8'
+);
 
 function createClassList() {
   const classes = new Set();
@@ -253,6 +261,47 @@ test('las políticas están publicadas, enlazadas y sin URLs pendientes', () => 
     terms,
     /https:\/\/asunfdez\.github\.io\/web-equilibra\/terminos-condiciones\.html/
   );
+});
+
+test('la página de eliminación aclara el alcance y prepara un correo revisable', () => {
+  assert.match(html, /href="eliminar-cuenta\.html"/);
+  assert.match(deletionHtml, /La cuenta de Google vinculada no se elimina/);
+  assert.match(deletionHtml, /datos guardados únicamente en tu dispositivo/);
+  assert.match(deletionHtml, /type="email"[^>]*required/);
+
+  const form = createElement();
+  const accountEmail = createElement();
+  accountEmail.value = 'persona@example.com';
+  const details = createElement();
+  details.value = 'Quiero borrar mi cuenta.';
+  const status = createElement();
+  const elements = new Map([
+    ['#deletion-request-form', form],
+    ['#account-email', accountEmail],
+    ['#request-details', details],
+    ['#request-status', status],
+  ]);
+  const document = {
+    querySelector(selector) {
+      return elements.get(selector) || null;
+    },
+  };
+  const window = { location: { href: '' } };
+
+  vm.runInNewContext(deletionScript, { document, window });
+
+  let prevented = false;
+  form.dispatch('submit', {
+    preventDefault() {
+      prevented = true;
+    },
+  });
+
+  assert.equal(prevented, true);
+  assert.match(window.location.href, /^mailto:asunfdezdiez@gmail\.com\?/);
+  assert.match(decodeURIComponent(window.location.href), /persona@example\.com/);
+  assert.match(decodeURIComponent(window.location.href), /Quiero borrar mi cuenta/);
+  assert.match(status.textContent, /Revísala y envíala/);
 });
 
 // TEST 2: Apertura y cierre del menú móvil
