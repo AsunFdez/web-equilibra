@@ -1,6 +1,6 @@
 # Equilibra
 
-Equilibra es una página web sobre la App Equilibra de bienestar financiero. Presenta una forma cercana y sin juicios de entender los gastos, crear hábitos y avanzar hacia objetivos de ahorro.
+Equilibra es una página web sobre la aplicación Equilibra de bienestar financiero. Presenta una forma cercana y sin juicios de entender los gastos, crear hábitos y avanzar hacia objetivos de ahorro.
 
 ## Qué incluye
 
@@ -10,7 +10,7 @@ Equilibra es una página web sobre la App Equilibra de bienestar financiero. Pre
 - Un resumen financiero interactivo que permite alternar entre el mes actual y el anterior.
 - Datos y gráficos ficticios; no se conectan cuentas ni se guardan movimientos.
 - Páginas públicas de privacidad, cookies y tecnologías similares, y términos y condiciones.
-- Página para solicitar por correo la eliminación de una cuenta de AppEquilibra y sus datos asociados.
+- Página para solicitar por correo la eliminación de una cuenta de Equilibra y sus datos asociados.
 
 ## Cómo abrir el proyecto
 
