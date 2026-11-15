@@ -225,6 +225,7 @@ test('la página contiene sus secciones principales y carga script.js', () => {
     'funciones',
     'demo',
     'bienestar',
+    'demos',
   ]) {
     assert.match(
       html,
@@ -232,6 +233,28 @@ test('la página contiene sus secciones principales y carga script.js', () => {
       `Debe existir la sección #${sectionId}`
     );
   }
+});
+
+test('la galería incluye vídeos reproducibles cuyos archivos están publicados', () => {
+  const videos = [...html.matchAll(/<video\b([^>]*)>([\s\S]*?)<\/video>/g)];
+
+  assert.equal(videos.length, 6);
+
+  const sources = videos.map(([, attributes, content]) => {
+    assert.match(attributes, /\bcontrols\b/);
+    assert.match(attributes, /\bpreload="none"/);
+
+    const source = content.match(
+      /<source\s+src="([^"]+)"\s+type="video\/mp4">/
+    );
+    assert.ok(source, 'Cada vídeo debe tener una fuente MP4');
+
+    const filePath = path.join(ROOT, source[1]);
+    assert.ok(fs.existsSync(filePath), `Debe existir ${source[1]}`);
+    return filePath;
+  });
+
+  assert.equal(new Set(sources).size, videos.length);
 });
 
 test('las políticas están publicadas, enlazadas y sin URLs pendientes', () => {
