@@ -226,6 +226,7 @@ test('la página contiene sus secciones principales y carga script.js', () => {
     'demo',
     'bienestar',
     'demos',
+    'manual',
   ]) {
     assert.match(
       html,
@@ -233,6 +234,21 @@ test('la página contiene sus secciones principales y carga script.js', () => {
       `Debe existir la sección #${sectionId}`
     );
   }
+});
+
+test('el manual de usuario está publicado y enlazado desde la página', () => {
+  const manualPath = 'assets/PDF/MANUAL_USUARIO_APP_EQUILIBRA.pdf';
+
+  assert.equal(
+    fs.existsSync(path.join(ROOT, manualPath)),
+    true,
+    'Debe existir el PDF del manual de usuario'
+  );
+  assert.match(
+    html,
+    new RegExp(`href="${manualPath}"[^>]*target="_blank"`),
+    'El manual debe abrirse en una nueva pestaña'
+  );
 });
 
 test('la galería incluye vídeos reproducibles cuyos archivos están publicados', () => {

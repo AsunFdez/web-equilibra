@@ -227,6 +227,18 @@ h1 { margin: 23px 0 17px; font-size: clamp(60px, 7.1vw, 92px); font-weight: 600;
 .video-card video { display: block; width: 100%; aspect-ratio: 16 / 9; background: #17231b; object-fit: contain; }
 .video-card h3 { margin: 0; padding: 16px 18px 18px; color: #1e2939; font-size: 15px; font-weight: 600; letter-spacing: -.03em; }
 
+.user-manual { padding: 88px 0; background: #ebeede; }
+.manual-layout { display: grid; grid-template-columns: 1fr 1fr; gap: 70px; align-items: center; }
+.manual-copy h2 { margin: 17px 0 18px; font-size: clamp(35px, 4.4vw, 54px); font-weight: 600; letter-spacing: -.07em; line-height: 1.18; }
+.manual-copy p { max-width: 500px; margin: 0; color: #687368; font-size: 12px; line-height: 1.9; }
+.manual-card { min-height: 132px; display: grid; grid-template-columns: auto 1fr auto; align-items: center; gap: 18px; padding: 24px; border: 1px solid rgba(45, 70, 50, .12); border-radius: 10px; background: #f9fafb; box-shadow: 0 12px 35px rgba(36, 61, 43, .08); transition: transform .2s ease, box-shadow .2s ease; }
+.manual-card:hover { transform: translateY(-3px); box-shadow: 0 18px 40px rgba(36, 61, 43, .12); }
+.manual-icon { width: 68px; height: 82px; display: grid; place-items: center; border-radius: 6px; color: #fff; background: var(--green); box-shadow: 5px 5px 0 #d4e5cd; font-family: var(--display); font-size: 11px; font-weight: 800; letter-spacing: .08em; }
+.manual-details strong, .manual-details small { display: block; }
+.manual-details strong { margin-bottom: 7px; font-family: var(--display); font-size: 18px; letter-spacing: -.04em; }
+.manual-details small { color: #7b867b; font-size: 10px; }
+.manual-action { color: var(--green); font-size: 11px; font-weight: 700; }
+
 .closing { padding: 91px 0 100px; background: #f8f8f3; }
 .closing-inner { position: relative; text-align: center; }
 .closing .section-kicker { margin-bottom: 16px; }
@@ -348,6 +360,11 @@ h1 { margin: 23px 0 17px; font-size: clamp(60px, 7.1vw, 92px); font-weight: 600;
   .video-demos { padding: 78px 0 84px; }
   .video-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; }
   .video-card h3 { padding: 13px 14px 15px; font-size: 13px; }
+  .user-manual { padding: 72px 0; }
+  .manual-layout { grid-template-columns: 1fr; gap: 28px; }
+  .manual-copy h2 { font-size: clamp(34px, 9.5vw, 46px); }
+  .manual-card { min-height: 118px; padding: 18px; }
+  .manual-icon { width: 58px; height: 72px; }
   .closing { padding: 72px 0 80px; }
   .closing h2 { font-size: clamp(35px, 9vw, 47px); }
   .closing-flower { top: -40px; right: 4%; font-size: 26px; }
@@ -367,6 +384,8 @@ h1 { margin: 23px 0 17px; font-size: clamp(60px, 7.1vw, 92px); font-weight: 600;
   .donut { width: 88px; }
   .donut-legend { grid-template-columns: 1fr; }
   .video-grid { grid-template-columns: 1fr; }
+  .manual-card { grid-template-columns: auto 1fr; }
+  .manual-action { grid-column: 2; }
   .goal-card { right: 14px; }
 }
 
